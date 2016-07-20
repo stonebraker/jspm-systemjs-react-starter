@@ -1,0 +1,45 @@
+{
+  "name": "jspm-systemjs-react-starter",
+  "version": "1.0.0",
+  "description": "A starter project for react apps using jspm and systemjs.",
+  "main": "index.js",
+  "scripts": {
+    "start": "watchman ./src \"npm run bundle\"",
+    "bundle": "jspm bundle ./src/app.js ./dist/bundle-dev.js --inject",
+    "build": "jspm unbundle && npm run bundle-sfx",
+    "bundle-sfx": "jspm bundle-sfx ./src/app.js ./dist/bundle-sfx.js --skip-source-maps --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stonebraker/jspm-systemjs-react-starter.git"
+  },
+  "keywords": [
+    "systemjs",
+    "jspm",
+    "react",
+    "es6"
+  ],
+  "author": "Jason Stonebraker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stonebraker/jspm-systemjs-react-starter/issues"
+  },
+  "homepage": "https://github.com/stonebraker/jspm-systemjs-react-starter#readme",
+  "devDependencies": {
+    "jspm": "^0.16.39",
+    "serve": "^1.4.0",
+    "watchman": "^0.1.8"
+  },
+  "jspm": {
+    "dependencies": {
+      "react": "npm:react@^15.2.1",
+      "react-dom": "npm:react-dom@^15.2.1"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}
